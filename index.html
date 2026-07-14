@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Bewafa — Discord & SMP</title>
+<meta name="description" content="Bewafa is a highly active Indian Discord community — nonstop chats, VC, games, events, giveaways, and the new Bewafa Survival SMP." />
+<meta name="theme-color" content="#9d00ff" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Orbitron:wght@400;600;700;900&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<meta property="og:title" content="Bewafa — Chilling Indian Discord Server & SMP" />
+<meta property="og:description" content="Nonstop active chats, VC, games, events, giveaways, and a fair-play Minecraft SMP. 10k+ members. Join now!" />
+<meta property="og:image" content="icon.gif" />
+<meta property="og:type" content="website" />
+<link rel="icon" href="icon.gif" type="image/gif" />
+
+<style>
+  *,*::before,*::after { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  :root {
+    /* Deep Backgrounds */
+    --bg: #05020a;
+    --bg2: #0a0414;
+    --bg3: #120724;
+    
+    /* Enhanced Electric Neon Purple Theme */
+    --purple: #aa00ff;
+    --purple2: #d04dff;
+    --purple3: #e8a6ff;
+    
+    --silver: #f8fafc;
+    --silver2: #cbd5e1;
+    --silver3: #94a3b8;
+    
+    /* Intense Glow Variables */
+    --border: rgba(170, 0, 255, 0.3);
+    --border2: rgba(208, 77, 255, 0.6);
+    --glow: rgba(170, 0, 255, 0.5);
+    --glow-intense: rgba(208, 77, 255, 0.8);
+    --glow-core: rgba(232, 166, 255, 1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--silver);
+    font-family: 'Syne', sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+    cursor: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, .nav-link, .num, .btn, .badge-week, .status-text {
+    font-family: 'Quantico', sans-serif;
+  }
+
+  /* ── TRIFORGE CURSOR ── */
+  #cur, #cur-trail { position: fixed; border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); }
+  #cur { width: 8px; height: 8px; background: var(--purple3); box-shadow: 0 0 15px var(--glow-core), 0 0 30px var(--purple); }
+  #cur-trail { width: 36px; height: 36px; border: 1px solid rgba(208, 77, 255, 0.8); box-shadow: 0 0 15px var(--glow); transition: all .12s ease-out; }
+
+  @media (pointer: coarse) {
+    body, a, .btn, details, .status-capsule, .music-toggle, .verify-btn { cursor: auto !important; }
+    #cur, #cur-trail { display: none !important; }
+  }
+
+  /* ── BACKGROUND PARTICLES & NOISE ── */
+  #particles { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+  .p { position: absolute; border-radius: 50%; animation: float linear infinite; }
+  @keyframes float { 0% { transform: translateY(100vh) scale(0); opacity: 0; } 10% { opacity: 1; } 90% { opacity: .6; } 100% { transform: translateY(-10vh) scale(1); opacity: 0; } }
+
+  body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E"); opacity: .5; z-index: 1; pointer-events: none; }
+
+  .container { width: min(1100px, 90%); margin: 0 auto; position: relative; z-index: 2; }
+
+  /* ── ENHANCED FLOATING BUTTONS (Music & Verify) ── */
+  .music-toggle, .verify-btn {
+    position: fixed; z-index: 1000;
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 12px 20px; border-radius: 100px;
+    background: rgba(10, 4, 20, 0.7); border: 1px solid var(--border);
+    backdrop-filter: blur(16px); color: var(--silver);
+    font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 0 20px rgba(170, 0, 255, 0.15);
+  }
+  
+  .music-toggle { bottom: 30px; right: 30px; }
+  .verify-btn { bottom: 30px; left: 30px; text-decoration: none; }
+  
+  .music-toggle:hover, .verify-btn:hover { 
+    transform: translateY(-3px) scale(1.05); 
+    box-shadow: 0 10px 30px var(--glow), 0 0 15px var(--glow-intense); 
+    border-color: var(--purple2); 
+    color: #fff;
+  }
+
+  /* Verify button specific styling */
+  .verify-btn .icon { color: #23d18b; font-size: 1.1rem; font-weight: 900; text-shadow: 0 0 10px rgba(35, 209, 139, 0.5); }
+  .verify-btn:hover .icon { text-shadow: 0 0 15px #23d18b; }
+
+  .music-toggle.playing {
+    border-color: var(--purple3);
+    background: rgba(170, 0, 255, 0.15);
+    box-shadow: 0 0 25px var(--glow), inset 0 0 15px rgba(208, 77, 255, 0.3);
+    animation: breathingGlow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes breathingGlow {
+    0% { box-shadow: 0 0 20px var(--glow), inset 0 0 10px rgba(208, 77, 255, 0.2); }
+    100% { box-shadow: 0 0 40px var(--glow-intense), inset 0 0 20px rgba(232, 166, 255, 0.4); }
+  }
+
+  .music-toggle .eq { display: inline-flex; align-items: flex-end; gap: 4px; height: 18px; }
+  .music-toggle .eq span { width: 4px; height: 6px; background: var(--purple2); border-radius: 2px; animation: bounce 1.2s ease-in-out infinite; box-shadow: 0 0 8px var(--purple2); transition: 0.3s; }
+  .music-toggle.playing .eq span { background: var(--glow-core); box-shadow: 0 0 12px var(--glow-core); }
+  .music-toggle .eq span:nth-child(2){ animation-delay: 0.2s; }
+  .music-toggle .eq span:nth-child(3){ animation-delay: 0.4s; }
+  .music-toggle .eq span:nth-child(4){ animation-delay: 0.15s; }
+  .music-toggle.paused .eq span { animation-play-state: paused; height: 6px; opacity: 0.4; box-shadow: none; background: var(--silver3); }
+  @keyframes bounce { 0%,100%{ height:6px } 50%{ height:18px } }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; justify-content: center; gap: 40px;
+    padding: 24px 0; background: linear-gradient(180deg, rgba(5,2,10,0.95) 0%, rgba(5,2,10,0.8) 60%, transparent 100%);
+    backdrop-filter: blur(16px); border-bottom: 1px solid rgba(170,0,255,0.1);
+    transition: 0.4s;
+  }
+  nav a {
+    color: var(--silver2); text-decoration: none; font-size: 0.95rem; font-weight: 700;
+    transition: 0.3s; position: relative; text-transform: uppercase; letter-spacing: 2px;
+  }
+  nav a:hover { color: #fff; text-shadow: 0 0 15px var(--purple3), 0 0 30px var(--purple); transform: translateY(-2px); }
+  nav a::after {
+    content: ''; position: absolute; left: 50%; bottom: -8px; height: 2px; width: 0;
+    background: var(--glow-core); border-radius: 2px; transition: all 0.4s ease;
+    transform: translateX(-50%); box-shadow: 0 0 10px var(--glow-core);
+  }
+  nav a:hover::after { width: 100%; }
+
+  /* ── HERO ── */
+  header.hero {
+    min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 120px 0 80px; position: relative; z-index: 2;
+    overflow: hidden;
+  }
+  
+  .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(170, 0, 255, 0.2) 0%, transparent 70%); pointer-events: none; }
+
+  .avatar {
+    width: 150px; height: 150px; border-radius: 50%;
+    border: 2px solid var(--border2);
+    padding: 6px; background: rgba(170, 0, 255, 0.1);
+    margin-bottom: 2rem;
+    animation: fadeUp .8s 0.2s both ease, pulseAvatar 4s ease-in-out infinite alternate, floatIcon 8s ease-in-out infinite;
+  }
+  .avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+
+  @keyframes pulseAvatar {
+    0% { box-shadow: 0 0 25px var(--glow), 0 0 50px rgba(170, 0, 255, 0.2); border-color: var(--purple); }
+    100% { box-shadow: 0 0 40px var(--glow-intense), 0 0 80px var(--glow); border-color: var(--glow-core); }
+  }
+  @keyframes floatIcon {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+
+  .server-name {
+    font-family: 'Kaushan Script', cursive;
+    font-size: clamp(3.5rem, 12vw, 8rem); 
+    color: #ffffff; 
+    margin-bottom: 0.5rem;
+    line-height: 1;
+    animation: fadeUp .8s 0.35s both ease, ambientTextGlow 4s ease-in-out infinite alternate;
+  }
+  
+  @keyframes ambientTextGlow {
+    0% { text-shadow: 0 0 25px rgba(170, 0, 255, 0.3), 0 0 50px rgba(170, 0, 255, 0.1); }
+    100% { text-shadow: 0 0 40px rgba(208, 77, 255, 0.6), 0 0 80px rgba(170, 0, 255, 0.4); }
+  }
+
+  .hero .tagline {
+    color: var(--silver2); font-size: 1.15rem; letter-spacing: 0.4em; text-transform: uppercase;
+    font-weight: 600; margin-bottom: 2.5rem; animation: fadeUp .8s 0.5s both ease;
+    text-shadow: 0 0 10px rgba(255,255,255,0.1);
+  }
+
+  .status-capsule {
+    display: inline-flex; align-items: center; gap: 12px; padding: .6rem 1.5rem;
+    background: rgba(170, 0, 255, 0.08); border: 1px solid var(--border2);
+    border-radius: 100px; backdrop-filter: blur(12px);
+    animation: fadeUp .8s 0.6s both ease; transition: 0.3s;
+    margin-bottom: 2rem; box-shadow: 0 0 20px rgba(170,0,255,0.1);
+  }
+  .status-capsule:hover { 
+    border-color: var(--glow-core); 
+    background: rgba(170, 0, 255, 0.2);
+    box-shadow: 0 0 30px var(--glow), 0 0 60px var(--glow); 
+    transform: translateY(-3px) scale(1.03);
+  }
+  .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #23d18b; box-shadow: 0 0 15px #23d18b; transition: all 0.5s ease; animation: pulse 2s infinite; }
+  .status-text { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.2em; color: var(--purple3); text-transform: uppercase; }
+  @keyframes pulse{0%,100%{opacity:1; transform:scale(1);}50%{opacity:.5; transform:scale(1.2);}}
+
+  /* Buttons */
+  .cta-row { margin-top: 20px; display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; animation: fadeUp .8s 0.7s both ease;}
+  
+  .btn-primary, .btn-secondary {
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+    padding: 1.1rem 2.5rem; border-radius: 12px; font-weight: 700; font-size: .9rem;
+    text-transform: uppercase; letter-spacing: .15em; text-decoration: none; cursor: none;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden;
+  }
+
+  .btn-primary {
+    color: #fff; background: linear-gradient(135deg, var(--purple), var(--purple2));
+    border: 1px solid var(--purple3);
+    box-shadow: 0 10px 30px var(--glow), inset 0 2px 10px rgba(255,255,255,.3);
+  }
+  .btn-primary::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,.25), transparent); opacity: 0; transition: 0.3s; }
+  .btn-primary:hover { transform: translateY(-4px); box-shadow: 0 15px 50px var(--glow-intense), 0 0 20px var(--glow-core); border-color: #fff; }
+  .btn-primary:hover::after { opacity: 1; }
+  
+  .btn-secondary {
+    background: rgba(10, 4, 20, 0.6); border: 1px solid var(--border2); color: var(--silver); backdrop-filter: blur(10px);
+  }
+  .btn-secondary:hover { 
+    border-color: var(--purple3); color: #fff; background: rgba(170,0,255,0.1);
+    box-shadow: 0 10px 30px var(--glow), inset 0 0 15px rgba(170,0,255,0.2); transform: translateY(-4px);
+  }
+
+  .hero-line { width: 2px; height: 100px; background: linear-gradient(to bottom, transparent, var(--purple2), transparent); margin: 4rem auto 0; animation: fadeUp 1s 0.8s ease both, breathingGlow 3s infinite alternate; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ── DIVIDER ── */
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border2), transparent); margin: 0; position: relative; z-index: 2; box-shadow: 0 0 10px var(--glow); }
+
+  /* ── SECTIONS & CARDS ── */
+  section { padding: 7rem 0; position: relative; z-index: 2; }
+  .section-head { text-align: center; margin-bottom: 5rem; }
+  .section-head h2 { font-size: clamp(2.2rem, 6vw, 3.5rem); font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 0 40px var(--glow-intense); margin-bottom: 1.2rem;}
+  .section-head p { color: var(--silver2); font-size: 1.1rem; line-height: 1.8; max-width: 650px; margin: 0 auto; }
+  
+  .section-tag {
+    display: inline-block; font-size: .7rem; font-weight: 700; letter-spacing: .4em; text-transform: uppercase;
+    color: var(--glow-core); margin-bottom: 1rem;
+    padding: .4rem 1.2rem; border: 1px solid var(--border2); border-radius: 6px; background: rgba(170, 0, 255, .1);
+    box-shadow: 0 0 15px rgba(170,0,255,0.2);
+  }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
+  .stat-card {
+    background: linear-gradient(145deg, rgba(170, 0, 255, .05), rgba(10, 4, 20, 0.8));
+    border: 1px solid var(--border); border-radius: 20px;
+    padding: 2.5rem; text-align: center; transition: 0.4s ease; position: relative; overflow: hidden;
+    backdrop-filter: blur(12px);
+  }
+  .stat-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at top right, rgba(208, 77, 255, 0.15), transparent 60%); opacity: 0; transition: 0.4s; }
+  .stat-card:hover { border-color: var(--purple3); transform: translateY(-6px); box-shadow: 0 15px 40px var(--glow); }
+  .stat-card:hover::before { opacity: 1; }
+  .stat-card .num { font-family: 'Quantico', sans-serif; font-size: 3rem; font-weight: 900; color: #fff; display: block; margin-bottom: .5rem; text-shadow: 0 0 25px var(--glow-intense); transition: 0.3s; }
+  .stat-card:hover .num { color: var(--glow-core); text-shadow: 0 0 40px var(--purple2); transform: scale(1.05); }
+  .stat-card .label { font-size: .85rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--silver2); }
+
+  .grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+  .card {
+    background: rgba(10, 4, 20, 0.6); border: 1px solid var(--border); border-radius: 24px;
+    padding: 3rem 2.5rem; transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden;
+    backdrop-filter: blur(16px);
+  }
+  .card::before {
+    content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 4px;
+    background: linear-gradient(90deg, transparent, var(--glow-core), transparent);
+    transition: 0.7s ease; z-index: 3; box-shadow: 0 0 20px var(--glow-core);
+  }
+  .card:hover::before { left: 100%; }
+  .card:hover { transform: translateY(-10px); border-color: var(--purple3); box-shadow: 0 25px 60px rgba(170, 0, 255, .25), inset 0 0 20px rgba(170,0,255,0.1); background: rgba(170, 0, 255, 0.05); }
+  
+  .card .ico {
+    width: 70px; height: 70px; border-radius: 16px; display: grid; place-items: center;
+    font-size: 2.2rem; margin-bottom: 1.8rem; background: rgba(170, 0, 255, 0.1);
+    border: 1px solid rgba(208, 77, 255, 0.4); color: #fff;
+    transition: 0.4s ease; box-shadow: 0 0 25px var(--glow);
+  }
+  .card:hover .ico {
+    transform: scale(1.15) translateY(-5px) rotate(5deg); background: rgba(208, 77, 255, 0.2);
+    border-color: var(--glow-core); box-shadow: 0 0 40px var(--glow-intense), inset 0 0 15px var(--glow-core);
+  }
+
+  .card h3 { font-size: 1.6rem; margin-bottom: 1.2rem; color: #fff; transition: 0.3s; letter-spacing: 1px; }
+  .card:hover h3 { text-shadow: 0 0 20px var(--purple2); color: var(--glow-core); }
+  .card p { color: var(--silver2); font-size: 1.05rem; line-height: 1.7; }
+
+  ul.feature-list { list-style: none; padding: 0; margin: 24px 0 0 0; }
+  ul.feature-list li { margin: 14px 0; padding-left: 28px; position: relative; color: var(--silver2); font-size: 1.05rem; transition: 0.3s; }
+  ul.feature-list li::before { content: ">"; position: absolute; left: 0; color: var(--purple2); font-weight: bold; text-shadow: 0 0 12px var(--glow); transition: 0.3s; font-size: 1.2rem; }
+  .card:hover ul.feature-list li { color: #fff; }
+  .card:hover ul.feature-list li::before { color: var(--glow-core); text-shadow: 0 0 20px var(--glow-core); transform: translateX(5px); }
+
+  .ip-box {
+    display: inline-flex; align-items: center; justify-content: center; gap: 18px;
+    background: rgba(5, 2, 10, 0.9); border: 2px solid var(--purple2); padding: 22px 40px;
+    border-radius: 20px; font-size: 1.5rem; color: #fff; font-weight: 700;
+    margin-top: 35px; transition: 0.4s ease; box-shadow: 0 0 30px var(--glow);
+  }
+  .ip-box:hover { 
+    transform: scale(1.03); border-color: var(--glow-core); background: rgba(170, 0, 255, 0.2); 
+    box-shadow: 0 0 50px var(--glow-intense), inset 0 0 20px rgba(170,0,255,0.3);
+  }
+  .ip-box .port-text { color: var(--silver2); font-size: 1.1rem; font-weight: normal; }
+  .ip-box .sep { margin: 0 8px; color: var(--purple2); }
+
+  /* Staff / Owners Grid Update */
+  .staff-grid { display: grid; gap: 2.5rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+  .staff-grid--single { max-width: 380px; margin: 0 auto; }
+  
+  .person { 
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 24px; 
+    overflow: hidden; transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    position: relative; min-height: 380px; display: flex; align-items: flex-end;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+  .person::before {
+    content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 4px;
+    background: linear-gradient(90deg, transparent, var(--glow-core), transparent);
+    transition: 0.7s ease; z-index: 3; box-shadow: 0 0 20px var(--glow-core);
+  }
+  .person:hover::before { left: 100%; }
+  .person:hover { transform: translateY(-12px); border-color: var(--purple3); box-shadow: 0 30px 60px rgba(170, 0, 255, 0.3), 0 0 30px var(--glow); }
+  
+  .person .avatar-img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;
+    z-index: 0; transition: transform 0.8s ease, filter 0.5s ease;
+    filter: brightness(0.6) contrast(1.15) saturate(0.8);
+  }
+  .person:hover .avatar-img { transform: scale(1.08); filter: brightness(0.9) contrast(1.2) saturate(1.2); }
+  
+  .person .body {
+    position: relative; z-index: 1; width: 100%; padding: 5rem 2.5rem 2.5rem; text-align: center;
+    background: linear-gradient(to top, rgba(5,2,10,1) 0%, rgba(5,2,10,0.95) 30%, rgba(5,2,10,0.4) 75%, transparent 100%);
+  }
+  .person h3 { font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: .4rem; text-shadow: 0 0 20px rgba(0,0,0,1); transition: 0.3s; }
+  .person:hover h3 { color: var(--glow-core); text-shadow: 0 0 20px var(--purple2); }
+  .person .role { font-size: .85rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--purple3); text-shadow: 0 0 15px rgba(0,0,0,1); }
+  
+  .person .desc {
+    font-size: 0.85rem; color: var(--silver2); line-height: 1.5; margin-top: 8px;
+    text-transform: none; letter-spacing: normal; text-shadow: 0 0 10px #000; font-weight: 500;
+  }
+
+  /* Discord / Action Profile Buttons */
+  .btn-profile {
+    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    margin-top: 15px; padding: 8px 18px;
+    background: rgba(88, 101, 242, 0.15); border: 1px solid rgba(88, 101, 242, 0.5); border-radius: 8px;
+    color: #fff; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    transition: 0.3s; text-decoration: none; position: relative; z-index: 5;
+  }
+  .btn-profile:hover {
+    background: #5865F2; border-color: #5865F2; box-shadow: 0 5px 20px rgba(88,101,242,0.4); transform: translateY(-3px);
+  }
+  .btn-profile.alt { background: rgba(170, 0, 255, 0.15); border-color: rgba(170, 0, 255, 0.5); }
+  .btn-profile.alt:hover { background: var(--purple); border-color: var(--purple2); box-shadow: 0 5px 20px var(--glow); }
+  
+  .btn-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 5px; }
+
+  /* FAQ */
+  .faq { max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+  details { background: rgba(10, 4, 20, 0.6); border: 1px solid var(--border); border-radius: 20px; padding: 0 28px; overflow: hidden; transition: 0.4s ease; backdrop-filter: blur(12px); }
+  details:hover { border-color: var(--purple2); box-shadow: 0 10px 40px var(--glow); transform: translateY(-3px); background: rgba(170,0,255,0.05); }
+  details summary { list-style: none; padding: 28px 0; font-weight: 700; font-size: 1.15rem; display: flex; justify-content: space-between; align-items: center; color: var(--silver); transition: 0.3s; cursor: pointer; letter-spacing: 0.5px;}
+  details:hover summary { color: var(--glow-core); text-shadow: 0 0 15px var(--glow); }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::after { content: '+'; color: var(--purple2); font-size: 1.8rem; transition: transform .5s cubic-bezier(0.175, 0.885, 0.32, 1.275); font-family: monospace; text-shadow: 0 0 20px var(--glow); }
+  details[open] summary::after { transform: rotate(45deg); color: var(--glow-core); text-shadow: 0 0 25px var(--glow-intense); }
+  details p { color: var(--silver2); padding: 0 0 28px; font-size: 1.05rem; line-height: 1.8; }
+
+  /* Join CTA & Banners */
+  .community-inner {
+    background: linear-gradient(135deg, rgba(170, 0, 255, .15), rgba(208, 77, 255, .08));
+    border: 1px solid var(--border2); border-radius: 30px;
+    padding: 6rem 4rem; text-align: center; position: relative; overflow: hidden;
+    box-shadow: 0 0 50px var(--glow), inset 0 0 30px rgba(170,0,255,0.1);
+  }
+  .community-inner::before {
+    content: ''; position: absolute; top: -250px; left: 50%; transform: translateX(-50%);
+    width: 800px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(208, 77, 255, .3), transparent 70%); pointer-events: none;
+    animation: breathingGlow 4s infinite alternate;
+  }
+  .community-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: #fff; margin-bottom: 1.2rem; position: relative; z-index: 1; text-shadow: 0 0 30px rgba(255,255,255,.4); }
+  .community-desc { font-size: 1.15rem; color: var(--silver); line-height: 1.8; max-width: 550px; margin: 0 auto 3rem; position: relative; z-index: 1; }
+
+  footer {
+    position: relative; z-index: 2; border-top: 1px solid var(--border);
+    padding: 3rem 0; background: rgba(5, 2, 10, .95);
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; padding: 0 20px;
+  }
+  .footer-brand { display: flex; align-items: center; gap: 1rem; font-family: 'Kaushan Script', cursive; font-size: 1.8rem; color: #fff; text-shadow: 0 0 15px var(--glow); }
+  .footer-brand img { width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--purple2); box-shadow: 0 0 15px var(--glow); }
+  .footer-info { text-align: center; font-size: 0.85rem; color: var(--silver3); letter-spacing: 0.08em; line-height: 1.8; }
+  .footer-info strong { color: var(--silver); }
+  .footer-right { font-size: 0.85rem; color: var(--silver3); letter-spacing: 0.08em; text-align: right; }
+  
+  .socials { display: flex; gap: 18px; justify-content: center; margin-bottom: 1.2rem; }
+  .socials a { width: 45px; height: 45px; border-radius: 50%; display: grid; place-items: center; background: rgba(170,0,255,0.05); border: 1px solid var(--border2); color: var(--silver); transition: 0.4s ease; }
+  .socials a:hover { transform: translateY(-4px) scale(1.1); border-color: var(--glow-core); box-shadow: 0 0 25px var(--glow-intense), inset 0 0 10px var(--glow); color: #fff; }
+  .socials svg { width: 20px; height: 20px; fill: currentColor; }
+
+  .reveal { opacity: 0; transform: translateY(50px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  a { color: var(--purple3); text-decoration: none; transition: 0.3s; }
+  a:hover { color: #fff; text-shadow: 0 0 15px var(--glow-intense); }
+
+  /* ── MOBILE OPTIMIZATIONS (FROSTED GLASS DOCK & LAYOUT) ── */
+  @media (max-width: 768px) {
+    body { padding-bottom: 100px; /* Space for the bottom dock */ }
+    section { padding: 5rem 0; }
+    .hero { padding: 80px 0 60px; }
+    
+    /* Sleek Mobile Bottom Dock */
+    nav { 
+      position: fixed; top: auto; bottom: 20px; left: 50%; transform: translateX(-50%);
+      width: 95%; border-radius: 20px; padding: 14px 6px;
+      justify-content: space-around; gap: 4px;
+      background: rgba(10, 4, 20, 0.85); border: 1px solid var(--border2);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.8), 0 0 30px var(--glow);
+      backdrop-filter: blur(20px);
+    }
+    nav a { font-size: 0.7rem; letter-spacing: 0.5px; }
+    nav a::after { display: none; /* remove underline on mobile dock */ }
+    nav a:active { color: var(--glow-core); }
+
+    /* Fix IP Box Mobile Breakage */
+    .ip-box {
+      flex-direction: column;
+      gap: 6px;
+      padding: 16px 20px;
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+    }
+    .ip-box #ipText { font-size: 1.3rem; word-wrap: break-word; }
+    .ip-box .port-text { font-size: 0.95rem !important; }
+    .ip-box .sep { display: none; }
+
+    /* Move Music & Verify Toggles top so they don't clash with dock */
+    .music-toggle { 
+      top: 15px; bottom: auto; right: 15px; 
+      padding: 10px 14px; font-size: 0.75rem; 
+      background: rgba(10, 4, 20, 0.85);
+    }
+    .verify-btn {
+      top: 15px; bottom: auto; left: 15px;
+      padding: 10px 14px; font-size: 0.75rem; 
+      background: rgba(10, 4, 20, 0.85);
+    }
+
+    .cta-row { flex-direction: column; width: 100%; align-items: center; gap: 16px; margin-top: 30px; }
+    .btn-primary, .btn-secondary { width: 100%; justify-content: center; max-width: 320px; padding: 1.2rem; }
+    .grid { grid-template-columns: 1fr; }
+    .card { padding: 30px 20px; }
+    .community-inner { padding: 4rem 1.5rem; }
+    .footer-inner { flex-direction: column; text-align: center; gap: 2rem; padding-bottom: 30px;}
+    .footer-right { text-align: center; }
+  }
+
+</style>
+</head>
+<body>
+
+  <div id="cur"></div>
+  <div id="cur-trail"></div>
+
+  <div id="particles"></div>
+
+  <audio id="bgm" loop preload="none">
+    <source src="music.mp3" type="audio/mpeg" />
+  </audio>
+  
+  <div class="music-toggle paused" id="musicToggle" aria-pressed="false" title="Toggle music">
+    <span class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+    <span id="musicLabel">Music</span>
+  </div>
+
+  <a href="https://www.bewafa.fun/verify/" class="verify-btn" target="_blank" rel="noopener" title="Verify User">
+    <span class="icon">✓</span>
+    <span>Verify</span>
+  </a>
+
+  <nav>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#smp" class="nav-link">SMP</a>
+    <a href="#owners" class="nav-link">Owners</a>
+    <a href="#ecosystem" class="nav-link">Ecosystem</a>
+    <a href="#core-staff" class="nav-link">Staff</a>
+    <a href="#faq" class="nav-link">FAQ</a>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-bg"></div>
+    <div class="avatar">
+      <img src="icon.gif" alt="Bewafa server icon" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=Bewafa'" />
+    </div>
+    
+    <div class="status-capsule" id="discord-stats" onclick="window.open('https://discord.gg/bewafa', '_blank')" style="cursor:pointer;">
+        <div class="status-dot" id="discord-dot"></div>
+        <span class="status-text" id="online-count">Syncing Data...</span>
+    </div>
+
+    <h1 class="server-name">BEWAFA</h1>
+    <p class="tagline">Discord Community • Survival SMP</p>
+    
+    <div class="cta-row">
+      <a class="btn-primary" href="https://discord.gg/bewafa" target="_blank" rel="noopener">
+        Join Discord
+      </a>
+      <a class="btn-secondary" href="#smp">View SMP Info</a>
+    </div>
+
+    <div class="hero-line"></div>
+  </header>
+
+  <div class="divider"></div>
+
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid reveal">
+        <div class="stat-card">
+          <span class="num">10K+</span>
+          <span class="label">Members</span>
+        </div>
+        <div class="stat-card">
+          <span class="num">24/7</span>
+          <span class="label">Active Chats</span>
+        </div>
+        <div class="stat-card">
+          <span class="num">∞</span>
+          <span class="label">Events</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">About Us</div>
+        <h2>About Bewafa</h2>
+        <p>The Ultimate Indian Discord Hangout</p>
+      </div>
+      <div class="card reveal" style="max-width:860px;margin:0 auto;text-align:center;">
+        <p style="color: var(--silver); font-size: 1.1rem; line-height: 1.9;">
+          Bewafa is a place to hang out with your friends with active giveaways and events of things like
+          <strong style="color: #fff; text-shadow: 0 0 15px var(--glow-core);">Discord Nitro</strong>, <strong style="color: #fff; text-shadow: 0 0 15px var(--glow-core);">Litecoin (LTC)</strong> and more. Jump into voice chats,
+          play games, vibe in active text channels, and meet a friendly community that never sleeps.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="smp">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">Minecraft</div>
+        <h2>Bewafa SMP</h2>
+        <p>Our Official Survival Server is Live</p>
+      </div>
+      
+      <div class="grid">
+        <div class="card reveal">
+            <div class="ico">⚔️</div>
+            <h3>Server Features</h3>
+            <ul class="feature-list">
+                <li>Survival SMP</li>
+                <li>Friendly Community</li>
+                <li>Regular Events & Giveaways</li>
+                <li>Fair Gameplay (No P2W)</li>
+            </ul>
+        </div>
+        
+        <div class="card reveal">
+            <div class="ico">📜</div>
+            <h3>Server Rules</h3>
+            <ul class="feature-list">
+                <li>Respect all players & staff.</li>
+                <li>No hacking or exploiting.</li>
+                <li>No griefing or stealing.</li>
+                <li>Follow staff instructions.</li>
+            </ul>
+        </div>
+      </div>
+
+      <div class="card reveal" style="margin-top: 32px; text-align: center;">
+          <div class="ico" style="margin: 0 auto 24px;">🚀</div>
+          <h3>Join The Adventure</h3>
+          <p style="margin-bottom: 24px; font-size: 1.1rem;">From setting up the server infrastructure to balancing gameplay, everything is smooth. We also have <strong style="color:#fff;">KitPvP</strong> unlocking in Season 2!</p>
+          
+          <div class="ip-box" id="copyIpBtn" style="cursor:pointer;">
+              <span id="ipText">play.bewafa.fun</span>
+              <span class="port-text"><span class="sep">|</span> Port: 25566</span>
+          </div>
+          <p id="copyAlert" style="color: #23d18b; font-size: 0.9rem; font-weight:bold; opacity: 0; transition: opacity 0.5s ease; margin-top: 20px; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 0 15px rgba(35, 209, 139, 0.6);">Copied to clipboard!</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="features">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">Highlights</div>
+        <h2>Discord Features</h2>
+        <p>What makes Bewafa worth staying for</p>
+      </div>
+      <div class="grid">
+        <div class="card reveal"><div class="ico">💬</div><h3>Active Chats</h3><p>Text channels that never go quiet — there's always someone to talk to, day or night.</p></div>
+        <div class="card reveal"><div class="ico">🎙️</div><h3>Voice Channels</h3><p>Hop into VCs to chill, hang out, or talk with friends anytime.</p></div>
+        <div class="card reveal"><div class="ico">🎮</div><h3>Games</h3><p>Game nights, bots and fun mini-games to play with the community.</p></div>
+        <div class="card reveal"><div class="ico">🎉</div><h3>Events</h3><p>Regular events and hangouts to keep the community buzzing.</p></div>
+        <div class="card reveal"><div class="ico">🎁</div><h3>Giveaways</h3><p>Frequent giveaways including Discord Nitro, Litecoin (LTC) and more.</p></div>
+        <div class="card reveal"><div class="ico">🛡️</div><h3>Friendly Staff</h3><p>A welcoming, active staff team that keeps things fun and safe.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="owners">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">Leadership</div>
+        <h2>Owners</h2>
+        <p>The minds behind Bewafa</p>
+      </div>
+      <div class="staff-grid">
+        <div class="person reveal">
+          <img class="avatar-img" src="aditya.png" alt="Aditya" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=Aditya'">
+          <div class="body">
+            <h3>Aditya</h3>
+            <div class="role">Founder</div>
+            <a href="https://discord.com/users/1494190840648564777" target="_blank" class="btn-profile">Discord Profile</a>
+          </div>
+        </div>
+        <div class="person reveal">
+          <img class="avatar-img" src="king.png" alt="King" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=King'">
+          <div class="body">
+            <h3>King</h3>
+            <div class="role">Founder</div>
+            <a href="https://discord.com/users/1287665700843819021" target="_blank" class="btn-profile">Discord Profile</a>
+          </div>
+        </div>
+        <div class="person reveal">
+          <img class="avatar-img" src="saurabh.gif" alt="Saurabh" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=Saurabh'">
+          <div class="body">
+            <h3>Saurabh</h3>
+            <div class="role">Founder</div>
+            <a href="https://discord.com/users/940179418905718815" target="_blank" class="btn-profile">Discord Profile</a>
+          </div>
+        </div>
+        <div class="person reveal">
+          <img class="avatar-img" src="vedant.png" alt="Vedant" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=Vedant'">
+          <div class="body">
+            <h3>Vedant</h3>
+            <div class="role">Founder</div>
+            <a href="https://discord.com/users/1147942434676936845" target="_blank" class="btn-profile">Discord Profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="ecosystem">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">Ecosystem</div>
+        <h2>Bots & Servers</h2>
+        <p>Our official projects and partner communities</p>
+      </div>
+      <div class="staff-grid">
+        <div class="person reveal">
+          <img class="avatar-img" src="zyrox.png" alt="Zyrox" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=Zyrox'">
+          <div class="body">
+            <h3>Zyrox</h3>
+            <div class="role">Official Discord Bot</div>
+            <div class="btn-row">
+              <a href="https://discord.com/oauth2/authorize?client_id=1502655662943895712" target="_blank" class="btn-profile alt">Invite Bot</a>
+              <a href="https://zyroxblack.qzz.io/" target="_blank" class="btn-profile alt">Website</a>
+              <a href="https://discord.gg/D2Y5JqShU3" target="_blank" class="btn-profile alt">Support</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="person reveal">
+          <img class="avatar-img" src="miku.webp" alt="Miku Community" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=Miku'">
+          <div class="body">
+            <h3>Miku Community</h3>
+            <div class="desc">BEST LTC EVENT SERVER EVER</div>
+            <a href="https://discord.gg/mikucm" target="_blank" class="btn-profile">Join Server</a>
+          </div>
+        </div>
+
+        <div class="person reveal">
+          <img class="avatar-img" src="freecloud.jpg" alt="Freecloud" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=Freecloud'">
+          <div class="body">
+            <h3>Freecloud</h3>
+            <div class="desc">Welcome to Freecloud! Get free MCFA & Nitro through Events and fun Giveaways. Stay with us for:<br>Minecraft Rewards • Free Gen</div>
+            <a href="https://discord.gg/mcfa" target="_blank" class="btn-profile">Join Server</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="core-staff">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">Management</div>
+        <h2>Core Staff</h2>
+        <p>The dedicated team managing the community</p>
+      </div>
+      <div class="staff-grid">
+        <div class="person reveal">
+          <img class="avatar-img" src="abhis.png" alt="Abhis" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=Abhis'">
+          <div class="body">
+            <h3>Abhis</h3>
+            <div class="role">Dev & Senior Management</div>
+            <a href="https://discord.com/users/723681043336658966" target="_blank" class="btn-profile">Discord Profile</a>
+          </div>
+        </div>
+        <div class="person reveal">
+          <img class="avatar-img" src="albatraoz.jpg" alt="Albatraoz" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=Albatraoz'">
+          <div class="body">
+            <h3>Albatraoz</h3>
+            <div class="role">Female Owner</div>
+            <a href="https://discord.com/users/941208796846506004" target="_blank" class="btn-profile">Discord Profile</a>
+          </div>
+        </div>
+        <div class="person reveal">
+          <img class="avatar-img" src="alex.gif" alt="Alex" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=Alex'">
+          <div class="body">
+            <h3>Alex</h3>
+            <div class="role">Dev & Management</div>
+            <a href="https://discord.com/users/1513777785636786262" target="_blank" class="btn-profile">Discord Profile</a>
+          </div>
+        </div>
+        <div class="person reveal">
+          <img class="avatar-img" src="neutron.png" alt="Neutron" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=Neutron'">
+          <div class="body">
+            <h3>Neutron</h3>
+            <div class="role">Head Dev</div>
+            <a href="https://discord.com/users/756828649780674631" target="_blank" class="btn-profile">Discord Profile</a>
+          </div>
+        </div>
+        <div class="person reveal">
+          <img class="avatar-img" src="ankush.png" alt="Ankush" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=Ankush'">
+          <div class="body">
+            <h3>Ankush</h3>
+            <div class="role">Head Management & Co Owner</div>
+            <a href="https://discord.com/users/1390506798464630894" target="_blank" class="btn-profile">Discord Profile</a>
+          </div>
+        </div>
+        <div class="person reveal">
+          <img class="avatar-img" src="cold.png" alt="Cold" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=Cold'">
+          <div class="body">
+            <h3>Cold</h3>
+            <div class="role">Head Management & Co Owner</div>
+            <a href="https://discord.com/users/1454464681543733422" target="_blank" class="btn-profile">Discord Profile</a>
+          </div>
+        </div>
+        <div class="person reveal">
+          <img class="avatar-img" src="tanishq.gif" alt="Tanishq" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=Tanishq'">
+          <div class="body">
+            <h3>Tanishq</h3>
+            <div class="role">Co Owner</div>
+            <a href="https://discord.com/users/952779594589671464" target="_blank" class="btn-profile">Discord Profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="faq">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">Knowledge Base</div>
+        <h2>FAQ</h2>
+        <p>Quick answers before you join</p>
+      </div>
+      <div class="faq">
+        <details class="reveal"><summary>How do I join Bewafa?</summary><p>Click any "Join Discord" button on this page or head to <a href="https://discord.gg/bewafa" target="_blank" rel="noopener">discord.gg/bewafa</a>.</p></details>
+        <details class="reveal"><summary>Is it cracked?</summary><p>Yes — Bewafa SMP supports both premium and cracked players. Everyone is welcome to join our adventures.</p></details>
+        <details class="reveal"><summary>What kind of giveaways do you run?</summary><p>We run frequent giveaways including Discord Nitro, Litecoin (LTC) and other prizes during events.</p></details>
+        <details class="reveal"><summary>Is the server active?</summary><p>Very. With 10k+ members, chats and voice channels stay active around the clock.</p></details>
+        <details class="reveal"><summary>How can I become staff?</summary><p>Stay active, be friendly and helpful, and keep an eye out for staff applications announced in the server.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="join">
+    <div class="container">
+      <div class="community-inner reveal">
+        <h2 class="community-title">Ready to vibe with us?</h2>
+        <p class="community-desc">Join 10,000+ members in the most active Indian Discord hangout.</p>
+        <a class="btn-primary" href="https://discord.gg/bewafa" target="_blank" rel="noopener" style="font-size:1.05rem; padding: 20px 45px;">
+          Join discord.gg/bewafa
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="icon.gif" alt="Bewafa" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=Bewafa'">
+        BEWAFA
+      </div>
+      <div class="footer-info">
+        <div class="socials">
+          <a href="https://discord.gg/bewafa" target="_blank" rel="noopener" title="Discord" aria-label="Discord">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.369a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.249a18.27 18.27 0 0 0-5.487 0 12.6 12.6 0 0 0-.617-1.25.077.077 0 0 0-.079-.036A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.009c.12.099.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.076.076 0 0 0-.04.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.055c.5-5.177-.838-9.674-3.549-13.66a.06.06 0 0 0-.031-.028ZM8.02 15.331c-1.183 0-2.157-1.086-2.157-2.419 0-1.333.955-2.42 2.157-2.42 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.419-2.157 2.419Zm7.975 0c-1.183 0-2.157-1.086-2.157-2.419 0-1.333.955-2.42 2.157-2.42 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.419-2.157 2.419Z"/></svg>
+          </a>
+        </div>
+        <div>SMP Powered by our VPS Sponsor, <a href="https://discord.gg/rFbG3JE8rT" target="_blank" rel="noopener" style="color: var(--purple3); font-weight: 700; text-shadow: 0 0 10px var(--glow);">Aura Cloud Hosting</a></div>
+        <div style="margin-top:.5rem;">@discordbewafa on Instagram</div>
+        <div style="margin-top: 1rem;">
+          <a href="https://www.bewafa.fun/privacy/" style="color: var(--silver3); margin: 0 10px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Privacy Policy</a>
+          <span style="color: var(--border2)">|</span>
+          <a href="https://www.bewafa.fun/tos/" style="color: var(--silver3); margin: 0 10px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-right">
+        © <span id="year"></span> BEWAFA<br>
+        <span style="color:var(--silver3);">All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 1. Dynamic Footer Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // 2. Cursor Logic (Disabled on Mobile via CSS)
+    const cur = document.getElementById('cur'), trail = document.getElementById('cur-trail');
+    let mx = 0, my = 0, tx = 0, ty = 0;
+    
+    document.addEventListener('mousemove', e => { 
+      mx = e.clientX; my = e.clientY; 
+      cur.style.left = mx + 'px'; cur.style.top = my + 'px'; 
+    });
+    
+    (function anim() { 
+      tx += (mx - tx) * .15; ty += (my - ty) * .15; 
+      trail.style.left = tx + 'px'; trail.style.top = ty + 'px'; 
+      requestAnimationFrame(anim); 
+    })();
+
+    document.querySelectorAll('a, button, summary, .card, .person, .status-capsule, .music-toggle, .ip-box').forEach(el => {
+      el.addEventListener('mouseenter', () => { 
+        trail.style.width = '60px'; trail.style.height = '60px'; trail.style.borderColor = 'var(--glow-core)'; 
+        trail.style.backgroundColor = 'rgba(170, 0, 255, 0.1)';
+        trail.style.boxShadow = '0 0 30px var(--glow)';
+      });
+      el.addEventListener('mouseleave', () => { 
+        trail.style.width = '36px'; trail.style.height = '36px'; trail.style.borderColor = 'rgba(208, 77, 255, 0.8)'; 
+        trail.style.backgroundColor = 'transparent';
+        trail.style.boxShadow = '0 0 15px var(--glow)';
+      });
+    });
+
+    // 3. Particles
+    const pc = document.getElementById('particles');
+    for(let i=0; i<35; i++){
+      const p = document.createElement('div');
+      p.className = 'p';
+      const sz = Math.random() * 5 + 1;
+      const hue = Math.random() > 0.5 ? '170,0,255' : '232,166,255'; 
+      p.style.cssText = `
+        width:${sz}px; height:${sz}px;
+        left:${Math.random()*100}%;
+        background:rgba(${hue},${Math.random()*.7+.2});
+        box-shadow:0 0 ${sz*4}px rgba(${hue},.6);
+        animation-duration:${Math.random()*25+15}s;
+        animation-delay:-${Math.random()*20}s;
+      `;
+      pc.appendChild(p);
+    }
+
+    // 4. Live Discord Server Sync
+    const guildAPI = 'https://discord.com/api/guilds/1379803846804635719/widget.json';
+    const statusDot = document.getElementById('discord-dot');
+    const statusText = document.getElementById('online-count');
+
+    async function fetchServerStatus() {
+      try {
+        const res = await fetch(guildAPI);
+        if (!res.ok) throw new Error("Unavailable");
+        const json = await res.json();
+        
+        if (json.presence_count !== undefined) {
+          statusText.textContent = `${json.presence_count} Members Online`;
+          statusDot.style.backgroundColor = '#23a559'; 
+          statusDot.style.boxShadow = `0 0 15px #23a559`;
+        } else {
+          statusText.textContent = 'Join Community';
+          statusDot.style.backgroundColor = '#747f8d'; 
+          statusDot.style.boxShadow = `0 0 10px #747f8d`;
+        }
+      } catch (err) {
+        statusText.textContent = 'Discord Widget Disabled';
+        statusDot.style.backgroundColor = '#f23f43'; 
+        statusDot.style.boxShadow = `0 0 15px #f23f43`;
+      }
+    }
+    fetchServerStatus();
+    setInterval(fetchServerStatus, 30000); 
+
+    // 5. Enhanced Music Toggle
+    const bgm = document.getElementById('bgm');
+    const toggle = document.getElementById('musicToggle');
+    const label = document.getElementById('musicLabel');
+    let playing = false;
+    bgm.volume = 0.3; 
+
+    toggle.addEventListener('click', async () => {
+      if (!playing) {
+        try {
+          await bgm.play();
+          playing = true;
+          toggle.classList.remove('paused');
+          toggle.classList.add('playing');
+          toggle.setAttribute('aria-pressed', 'true');
+        } catch (e) {
+          label.textContent = 'No Audio File';
+        }
+      } else {
+        bgm.pause();
+        playing = false;
+        toggle.classList.add('paused');
+        toggle.classList.remove('playing');
+        toggle.setAttribute('aria-pressed', 'false');
+      }
+    });
+
+    // 6. Copy IP
+    document.getElementById('copyIpBtn').addEventListener('click', () => {
+        navigator.clipboard.writeText("play.bewafa.fun");
+        const alert = document.getElementById('copyAlert');
+        alert.style.opacity = '1';
+        setTimeout(() => { alert.style.opacity = '0'; }, 3000);
+    });
+
+    // 7. Scroll Reveal
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { 
+        if (e.isIntersecting) { 
+          e.target.classList.add('visible'); 
+          obs.unobserve(e.target); 
+        } 
+      });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+  </script>
+</body>
+</html>
