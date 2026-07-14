@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>Bewafa — Discord & SMP</title>
-<meta name="description" content="Bewafa is a highly active Indian Discord community — nonstop chats, VC, games, events, giveaways, and the new Bewafa Survival SMP." />
-<meta name="theme-color" content="#9d00ff" />
+<title>Bewafa — Discord Community</title>
+<meta name="description" content="Bewafa is a highly active Indian Discord community — nonstop chats, VC, games, events, giveaways, and a friendly community that never sleeps." />
+<meta name="theme-color" content="#e0912f" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Orbitron:wght@400;600;700;900&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-<meta property="og:title" content="Bewafa — Chilling Indian Discord Server & SMP" />
-<meta property="og:description" content="Nonstop active chats, VC, games, events, giveaways, and a fair-play Minecraft SMP. 10k+ members. Join now!" />
+<meta property="og:title" content="Bewafa — Chilling Indian Discord Server" />
+<meta property="og:description" content="Nonstop active chats, VC, games, events, and giveaways. 10k+ members. Join now!" />
 <meta property="og:image" content="icon.gif" />
 <meta property="og:type" content="website" />
 <link rel="icon" href="icon.gif" type="image/gif" />
@@ -22,25 +22,25 @@
   
   :root {
     /* Deep Backgrounds */
-    --bg: #05020a;
-    --bg2: #0a0414;
-    --bg3: #120724;
+    --bg: #0a0704;
+    --bg2: #140d06;
+    --bg3: #1f1409;
     
     /* Enhanced Electric Neon Purple Theme */
-    --purple: #aa00ff;
-    --purple2: #d04dff;
-    --purple3: #e8a6ff;
+    --purple: #e0912f;
+    --purple2: #f5a94d;
+    --purple3: #ffd9a0;
     
-    --silver: #f8fafc;
-    --silver2: #cbd5e1;
-    --silver3: #94a3b8;
+    --silver: #fdf6ec;
+    --silver2: #ecd9be;
+    --silver3: #c2a983;
     
     /* Intense Glow Variables */
-    --border: rgba(170, 0, 255, 0.3);
-    --border2: rgba(208, 77, 255, 0.6);
-    --glow: rgba(170, 0, 255, 0.5);
-    --glow-intense: rgba(208, 77, 255, 0.8);
-    --glow-core: rgba(232, 166, 255, 1);
+    --border: rgba(224, 145, 47, 0.3);
+    --border2: rgba(245, 169, 77, 0.6);
+    --glow: rgba(224, 145, 47, 0.5);
+    --glow-intense: rgba(245, 169, 77, 0.8);
+    --glow-core: rgba(255, 217, 160, 1);
   }
 
   html { scroll-behavior: smooth; }
@@ -62,7 +62,7 @@
   /* ── TRIFORGE CURSOR ── */
   #cur, #cur-trail { position: fixed; border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); }
   #cur { width: 8px; height: 8px; background: var(--purple3); box-shadow: 0 0 15px var(--glow-core), 0 0 30px var(--purple); }
-  #cur-trail { width: 36px; height: 36px; border: 1px solid rgba(208, 77, 255, 0.8); box-shadow: 0 0 15px var(--glow); transition: all .12s ease-out; }
+  #cur-trail { width: 36px; height: 36px; border: 1px solid rgba(245, 169, 77, 0.8); box-shadow: 0 0 15px var(--glow); transition: all .12s ease-out; }
 
   @media (pointer: coarse) {
     body, a, .btn, details, .status-capsule, .music-toggle, .verify-btn { cursor: auto !important; }
@@ -83,11 +83,11 @@
     position: fixed; z-index: 1000;
     display: inline-flex; align-items: center; gap: 12px;
     padding: 12px 20px; border-radius: 100px;
-    background: rgba(10, 4, 20, 0.7); border: 1px solid var(--border);
+    background: rgba(22, 14, 7, 0.7); border: 1px solid var(--border);
     backdrop-filter: blur(16px); color: var(--silver);
     font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 0 20px rgba(170, 0, 255, 0.15);
+    box-shadow: 0 0 20px rgba(224, 145, 47, 0.15);
   }
   
   .music-toggle { bottom: 30px; right: 30px; }
@@ -106,14 +106,14 @@
 
   .music-toggle.playing {
     border-color: var(--purple3);
-    background: rgba(170, 0, 255, 0.15);
-    box-shadow: 0 0 25px var(--glow), inset 0 0 15px rgba(208, 77, 255, 0.3);
+    background: rgba(224, 145, 47, 0.15);
+    box-shadow: 0 0 25px var(--glow), inset 0 0 15px rgba(245, 169, 77, 0.3);
     animation: breathingGlow 3s ease-in-out infinite alternate;
   }
 
   @keyframes breathingGlow {
-    0% { box-shadow: 0 0 20px var(--glow), inset 0 0 10px rgba(208, 77, 255, 0.2); }
-    100% { box-shadow: 0 0 40px var(--glow-intense), inset 0 0 20px rgba(232, 166, 255, 0.4); }
+    0% { box-shadow: 0 0 20px var(--glow), inset 0 0 10px rgba(245, 169, 77, 0.2); }
+    100% { box-shadow: 0 0 40px var(--glow-intense), inset 0 0 20px rgba(255, 217, 160, 0.4); }
   }
 
   .music-toggle .eq { display: inline-flex; align-items: flex-end; gap: 4px; height: 18px; }
@@ -129,8 +129,8 @@
   nav {
     position: sticky; top: 0; z-index: 100;
     display: flex; justify-content: center; gap: 40px;
-    padding: 24px 0; background: linear-gradient(180deg, rgba(5,2,10,0.95) 0%, rgba(5,2,10,0.8) 60%, transparent 100%);
-    backdrop-filter: blur(16px); border-bottom: 1px solid rgba(170,0,255,0.1);
+    padding: 24px 0; background: linear-gradient(180deg, rgba(12, 8, 4,0.95) 0%, rgba(12, 8, 4,0.8) 60%, transparent 100%);
+    backdrop-filter: blur(16px); border-bottom: 1px solid rgba(224, 145, 47,0.1);
     transition: 0.4s;
   }
   nav a {
@@ -152,19 +152,19 @@
     overflow: hidden;
   }
   
-  .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(170, 0, 255, 0.2) 0%, transparent 70%); pointer-events: none; }
+  .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(224, 145, 47, 0.2) 0%, transparent 70%); pointer-events: none; }
 
   .avatar {
     width: 150px; height: 150px; border-radius: 50%;
     border: 2px solid var(--border2);
-    padding: 6px; background: rgba(170, 0, 255, 0.1);
+    padding: 6px; background: rgba(224, 145, 47, 0.1);
     margin-bottom: 2rem;
     animation: fadeUp .8s 0.2s both ease, pulseAvatar 4s ease-in-out infinite alternate, floatIcon 8s ease-in-out infinite;
   }
   .avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
 
   @keyframes pulseAvatar {
-    0% { box-shadow: 0 0 25px var(--glow), 0 0 50px rgba(170, 0, 255, 0.2); border-color: var(--purple); }
+    0% { box-shadow: 0 0 25px var(--glow), 0 0 50px rgba(224, 145, 47, 0.2); border-color: var(--purple); }
     100% { box-shadow: 0 0 40px var(--glow-intense), 0 0 80px var(--glow); border-color: var(--glow-core); }
   }
   @keyframes floatIcon {
@@ -182,8 +182,8 @@
   }
   
   @keyframes ambientTextGlow {
-    0% { text-shadow: 0 0 25px rgba(170, 0, 255, 0.3), 0 0 50px rgba(170, 0, 255, 0.1); }
-    100% { text-shadow: 0 0 40px rgba(208, 77, 255, 0.6), 0 0 80px rgba(170, 0, 255, 0.4); }
+    0% { text-shadow: 0 0 25px rgba(224, 145, 47, 0.3), 0 0 50px rgba(224, 145, 47, 0.1); }
+    100% { text-shadow: 0 0 40px rgba(245, 169, 77, 0.6), 0 0 80px rgba(224, 145, 47, 0.4); }
   }
 
   .hero .tagline {
@@ -194,14 +194,14 @@
 
   .status-capsule {
     display: inline-flex; align-items: center; gap: 12px; padding: .6rem 1.5rem;
-    background: rgba(170, 0, 255, 0.08); border: 1px solid var(--border2);
+    background: rgba(224, 145, 47, 0.08); border: 1px solid var(--border2);
     border-radius: 100px; backdrop-filter: blur(12px);
     animation: fadeUp .8s 0.6s both ease; transition: 0.3s;
-    margin-bottom: 2rem; box-shadow: 0 0 20px rgba(170,0,255,0.1);
+    margin-bottom: 2rem; box-shadow: 0 0 20px rgba(224, 145, 47,0.1);
   }
   .status-capsule:hover { 
     border-color: var(--glow-core); 
-    background: rgba(170, 0, 255, 0.2);
+    background: rgba(224, 145, 47, 0.2);
     box-shadow: 0 0 30px var(--glow), 0 0 60px var(--glow); 
     transform: translateY(-3px) scale(1.03);
   }
@@ -229,11 +229,11 @@
   .btn-primary:hover::after { opacity: 1; }
   
   .btn-secondary {
-    background: rgba(10, 4, 20, 0.6); border: 1px solid var(--border2); color: var(--silver); backdrop-filter: blur(10px);
+    background: rgba(22, 14, 7, 0.6); border: 1px solid var(--border2); color: var(--silver); backdrop-filter: blur(10px);
   }
   .btn-secondary:hover { 
-    border-color: var(--purple3); color: #fff; background: rgba(170,0,255,0.1);
-    box-shadow: 0 10px 30px var(--glow), inset 0 0 15px rgba(170,0,255,0.2); transform: translateY(-4px);
+    border-color: var(--purple3); color: #fff; background: rgba(224, 145, 47,0.1);
+    box-shadow: 0 10px 30px var(--glow), inset 0 0 15px rgba(224, 145, 47,0.2); transform: translateY(-4px);
   }
 
   .hero-line { width: 2px; height: 100px; background: linear-gradient(to bottom, transparent, var(--purple2), transparent); margin: 4rem auto 0; animation: fadeUp 1s 0.8s ease both, breathingGlow 3s infinite alternate; }
@@ -252,18 +252,18 @@
   .section-tag {
     display: inline-block; font-size: .7rem; font-weight: 700; letter-spacing: .4em; text-transform: uppercase;
     color: var(--glow-core); margin-bottom: 1rem;
-    padding: .4rem 1.2rem; border: 1px solid var(--border2); border-radius: 6px; background: rgba(170, 0, 255, .1);
-    box-shadow: 0 0 15px rgba(170,0,255,0.2);
+    padding: .4rem 1.2rem; border: 1px solid var(--border2); border-radius: 6px; background: rgba(224, 145, 47, .1);
+    box-shadow: 0 0 15px rgba(224, 145, 47,0.2);
   }
 
   .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
   .stat-card {
-    background: linear-gradient(145deg, rgba(170, 0, 255, .05), rgba(10, 4, 20, 0.8));
+    background: linear-gradient(145deg, rgba(224, 145, 47, .05), rgba(22, 14, 7, 0.8));
     border: 1px solid var(--border); border-radius: 20px;
     padding: 2.5rem; text-align: center; transition: 0.4s ease; position: relative; overflow: hidden;
     backdrop-filter: blur(12px);
   }
-  .stat-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at top right, rgba(208, 77, 255, 0.15), transparent 60%); opacity: 0; transition: 0.4s; }
+  .stat-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at top right, rgba(245, 169, 77, 0.15), transparent 60%); opacity: 0; transition: 0.4s; }
   .stat-card:hover { border-color: var(--purple3); transform: translateY(-6px); box-shadow: 0 15px 40px var(--glow); }
   .stat-card:hover::before { opacity: 1; }
   .stat-card .num { font-family: 'Quantico', sans-serif; font-size: 3rem; font-weight: 900; color: #fff; display: block; margin-bottom: .5rem; text-shadow: 0 0 25px var(--glow-intense); transition: 0.3s; }
@@ -272,7 +272,7 @@
 
   .grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
   .card {
-    background: rgba(10, 4, 20, 0.6); border: 1px solid var(--border); border-radius: 24px;
+    background: rgba(22, 14, 7, 0.6); border: 1px solid var(--border); border-radius: 24px;
     padding: 3rem 2.5rem; transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden;
     backdrop-filter: blur(16px);
   }
@@ -282,16 +282,16 @@
     transition: 0.7s ease; z-index: 3; box-shadow: 0 0 20px var(--glow-core);
   }
   .card:hover::before { left: 100%; }
-  .card:hover { transform: translateY(-10px); border-color: var(--purple3); box-shadow: 0 25px 60px rgba(170, 0, 255, .25), inset 0 0 20px rgba(170,0,255,0.1); background: rgba(170, 0, 255, 0.05); }
+  .card:hover { transform: translateY(-10px); border-color: var(--purple3); box-shadow: 0 25px 60px rgba(224, 145, 47, .25), inset 0 0 20px rgba(224, 145, 47,0.1); background: rgba(224, 145, 47, 0.05); }
   
   .card .ico {
     width: 70px; height: 70px; border-radius: 16px; display: grid; place-items: center;
-    font-size: 2.2rem; margin-bottom: 1.8rem; background: rgba(170, 0, 255, 0.1);
-    border: 1px solid rgba(208, 77, 255, 0.4); color: #fff;
+    font-size: 2.2rem; margin-bottom: 1.8rem; background: rgba(224, 145, 47, 0.1);
+    border: 1px solid rgba(245, 169, 77, 0.4); color: #fff;
     transition: 0.4s ease; box-shadow: 0 0 25px var(--glow);
   }
   .card:hover .ico {
-    transform: scale(1.15) translateY(-5px) rotate(5deg); background: rgba(208, 77, 255, 0.2);
+    transform: scale(1.15) translateY(-5px) rotate(5deg); background: rgba(245, 169, 77, 0.2);
     border-color: var(--glow-core); box-shadow: 0 0 40px var(--glow-intense), inset 0 0 15px var(--glow-core);
   }
 
@@ -307,13 +307,13 @@
 
   .ip-box {
     display: inline-flex; align-items: center; justify-content: center; gap: 18px;
-    background: rgba(5, 2, 10, 0.9); border: 2px solid var(--purple2); padding: 22px 40px;
+    background: rgba(12, 8, 4, 0.9); border: 2px solid var(--purple2); padding: 22px 40px;
     border-radius: 20px; font-size: 1.5rem; color: #fff; font-weight: 700;
     margin-top: 35px; transition: 0.4s ease; box-shadow: 0 0 30px var(--glow);
   }
   .ip-box:hover { 
-    transform: scale(1.03); border-color: var(--glow-core); background: rgba(170, 0, 255, 0.2); 
-    box-shadow: 0 0 50px var(--glow-intense), inset 0 0 20px rgba(170,0,255,0.3);
+    transform: scale(1.03); border-color: var(--glow-core); background: rgba(224, 145, 47, 0.2); 
+    box-shadow: 0 0 50px var(--glow-intense), inset 0 0 20px rgba(224, 145, 47,0.3);
   }
   .ip-box .port-text { color: var(--silver2); font-size: 1.1rem; font-weight: normal; }
   .ip-box .sep { margin: 0 8px; color: var(--purple2); }
@@ -334,7 +334,7 @@
     transition: 0.7s ease; z-index: 3; box-shadow: 0 0 20px var(--glow-core);
   }
   .person:hover::before { left: 100%; }
-  .person:hover { transform: translateY(-12px); border-color: var(--purple3); box-shadow: 0 30px 60px rgba(170, 0, 255, 0.3), 0 0 30px var(--glow); }
+  .person:hover { transform: translateY(-12px); border-color: var(--purple3); box-shadow: 0 30px 60px rgba(224, 145, 47, 0.3), 0 0 30px var(--glow); }
   
   .person .avatar-img {
     position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;
@@ -345,7 +345,7 @@
   
   .person .body {
     position: relative; z-index: 1; width: 100%; padding: 5rem 2.5rem 2.5rem; text-align: center;
-    background: linear-gradient(to top, rgba(5,2,10,1) 0%, rgba(5,2,10,0.95) 30%, rgba(5,2,10,0.4) 75%, transparent 100%);
+    background: linear-gradient(to top, rgba(12, 8, 4,1) 0%, rgba(12, 8, 4,0.95) 30%, rgba(12, 8, 4,0.4) 75%, transparent 100%);
   }
   .person h3 { font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: .4rem; text-shadow: 0 0 20px rgba(0,0,0,1); transition: 0.3s; }
   .person:hover h3 { color: var(--glow-core); text-shadow: 0 0 20px var(--purple2); }
@@ -367,15 +367,15 @@
   .btn-profile:hover {
     background: #5865F2; border-color: #5865F2; box-shadow: 0 5px 20px rgba(88,101,242,0.4); transform: translateY(-3px);
   }
-  .btn-profile.alt { background: rgba(170, 0, 255, 0.15); border-color: rgba(170, 0, 255, 0.5); }
+  .btn-profile.alt { background: rgba(224, 145, 47, 0.15); border-color: rgba(224, 145, 47, 0.5); }
   .btn-profile.alt:hover { background: var(--purple); border-color: var(--purple2); box-shadow: 0 5px 20px var(--glow); }
   
   .btn-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 5px; }
 
   /* FAQ */
   .faq { max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
-  details { background: rgba(10, 4, 20, 0.6); border: 1px solid var(--border); border-radius: 20px; padding: 0 28px; overflow: hidden; transition: 0.4s ease; backdrop-filter: blur(12px); }
-  details:hover { border-color: var(--purple2); box-shadow: 0 10px 40px var(--glow); transform: translateY(-3px); background: rgba(170,0,255,0.05); }
+  details { background: rgba(22, 14, 7, 0.6); border: 1px solid var(--border); border-radius: 20px; padding: 0 28px; overflow: hidden; transition: 0.4s ease; backdrop-filter: blur(12px); }
+  details:hover { border-color: var(--purple2); box-shadow: 0 10px 40px var(--glow); transform: translateY(-3px); background: rgba(224, 145, 47,0.05); }
   details summary { list-style: none; padding: 28px 0; font-weight: 700; font-size: 1.15rem; display: flex; justify-content: space-between; align-items: center; color: var(--silver); transition: 0.3s; cursor: pointer; letter-spacing: 0.5px;}
   details:hover summary { color: var(--glow-core); text-shadow: 0 0 15px var(--glow); }
   details summary::-webkit-details-marker { display: none; }
@@ -385,15 +385,15 @@
 
   /* Join CTA & Banners */
   .community-inner {
-    background: linear-gradient(135deg, rgba(170, 0, 255, .15), rgba(208, 77, 255, .08));
+    background: linear-gradient(135deg, rgba(224, 145, 47, .15), rgba(245, 169, 77, .08));
     border: 1px solid var(--border2); border-radius: 30px;
     padding: 6rem 4rem; text-align: center; position: relative; overflow: hidden;
-    box-shadow: 0 0 50px var(--glow), inset 0 0 30px rgba(170,0,255,0.1);
+    box-shadow: 0 0 50px var(--glow), inset 0 0 30px rgba(224, 145, 47,0.1);
   }
   .community-inner::before {
     content: ''; position: absolute; top: -250px; left: 50%; transform: translateX(-50%);
     width: 800px; height: 500px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(208, 77, 255, .3), transparent 70%); pointer-events: none;
+    background: radial-gradient(circle, rgba(245, 169, 77, .3), transparent 70%); pointer-events: none;
     animation: breathingGlow 4s infinite alternate;
   }
   .community-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: #fff; margin-bottom: 1.2rem; position: relative; z-index: 1; text-shadow: 0 0 30px rgba(255,255,255,.4); }
@@ -401,7 +401,7 @@
 
   footer {
     position: relative; z-index: 2; border-top: 1px solid var(--border);
-    padding: 3rem 0; background: rgba(5, 2, 10, .95);
+    padding: 3rem 0; background: rgba(12, 8, 4, .95);
   }
   .footer-inner {
     max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; padding: 0 20px;
@@ -413,7 +413,7 @@
   .footer-right { font-size: 0.85rem; color: var(--silver3); letter-spacing: 0.08em; text-align: right; }
   
   .socials { display: flex; gap: 18px; justify-content: center; margin-bottom: 1.2rem; }
-  .socials a { width: 45px; height: 45px; border-radius: 50%; display: grid; place-items: center; background: rgba(170,0,255,0.05); border: 1px solid var(--border2); color: var(--silver); transition: 0.4s ease; }
+  .socials a { width: 45px; height: 45px; border-radius: 50%; display: grid; place-items: center; background: rgba(224, 145, 47,0.05); border: 1px solid var(--border2); color: var(--silver); transition: 0.4s ease; }
   .socials a:hover { transform: translateY(-4px) scale(1.1); border-color: var(--glow-core); box-shadow: 0 0 25px var(--glow-intense), inset 0 0 10px var(--glow); color: #fff; }
   .socials svg { width: 20px; height: 20px; fill: currentColor; }
 
@@ -434,7 +434,7 @@
       position: fixed; top: auto; bottom: 20px; left: 50%; transform: translateX(-50%);
       width: 95%; border-radius: 20px; padding: 14px 6px;
       justify-content: space-around; gap: 4px;
-      background: rgba(10, 4, 20, 0.85); border: 1px solid var(--border2);
+      background: rgba(22, 14, 7, 0.85); border: 1px solid var(--border2);
       box-shadow: 0 10px 40px rgba(0,0,0,0.8), 0 0 30px var(--glow);
       backdrop-filter: blur(20px);
     }
@@ -459,12 +459,12 @@
     .music-toggle { 
       top: 15px; bottom: auto; right: 15px; 
       padding: 10px 14px; font-size: 0.75rem; 
-      background: rgba(10, 4, 20, 0.85);
+      background: rgba(22, 14, 7, 0.85);
     }
     .verify-btn {
       top: 15px; bottom: auto; left: 15px;
       padding: 10px 14px; font-size: 0.75rem; 
-      background: rgba(10, 4, 20, 0.85);
+      background: rgba(22, 14, 7, 0.85);
     }
 
     .cta-row { flex-direction: column; width: 100%; align-items: center; gap: 16px; margin-top: 30px; }
@@ -501,7 +501,6 @@
 
   <nav>
     <a href="#about" class="nav-link">About</a>
-    <a href="#smp" class="nav-link">SMP</a>
     <a href="#owners" class="nav-link">Owners</a>
     <a href="#ecosystem" class="nav-link">Ecosystem</a>
     <a href="#core-staff" class="nav-link">Staff</a>
@@ -520,13 +519,13 @@
     </div>
 
     <h1 class="server-name">BEWAFA</h1>
-    <p class="tagline">Discord Community • Survival SMP</p>
+    <p class="tagline">The Ultimate Indian Discord Hangout</p>
     
     <div class="cta-row">
       <a class="btn-primary" href="https://discord.gg/bewafa" target="_blank" rel="noopener">
         Join Discord
       </a>
-      <a class="btn-secondary" href="#smp">View SMP Info</a>
+      <a class="btn-secondary" href="#features">Explore Features</a>
     </div>
 
     <div class="hero-line"></div>
@@ -572,53 +571,7 @@
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <section id="smp">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="section-tag">Minecraft</div>
-        <h2>Bewafa SMP</h2>
-        <p>Our Official Survival Server is Live</p>
-      </div>
-      
-      <div class="grid">
-        <div class="card reveal">
-            <div class="ico">⚔️</div>
-            <h3>Server Features</h3>
-            <ul class="feature-list">
-                <li>Survival SMP</li>
-                <li>Friendly Community</li>
-                <li>Regular Events & Giveaways</li>
-                <li>Fair Gameplay (No P2W)</li>
-            </ul>
-        </div>
-        
-        <div class="card reveal">
-            <div class="ico">📜</div>
-            <h3>Server Rules</h3>
-            <ul class="feature-list">
-                <li>Respect all players & staff.</li>
-                <li>No hacking or exploiting.</li>
-                <li>No griefing or stealing.</li>
-                <li>Follow staff instructions.</li>
-            </ul>
-        </div>
-      </div>
-
-      <div class="card reveal" style="margin-top: 32px; text-align: center;">
-          <div class="ico" style="margin: 0 auto 24px;">🚀</div>
-          <h3>Join The Adventure</h3>
-          <p style="margin-bottom: 24px; font-size: 1.1rem;">From setting up the server infrastructure to balancing gameplay, everything is smooth. We also have <strong style="color:#fff;">KitPvP</strong> unlocking in Season 2!</p>
-          
-          <div class="ip-box" id="copyIpBtn" style="cursor:pointer;">
-              <span id="ipText">play.bewafa.fun</span>
-              <span class="port-text"><span class="sep">|</span> Port: 25566</span>
-          </div>
-          <p id="copyAlert" style="color: #23d18b; font-size: 0.9rem; font-weight:bold; opacity: 0; transition: opacity 0.5s ease; margin-top: 20px; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 0 15px rgba(35, 209, 139, 0.6);">Copied to clipboard!</p>
-      </div>
-    </div>
-  </section>
+  
 
   <div class="divider"></div>
 
@@ -811,7 +764,6 @@
       </div>
       <div class="faq">
         <details class="reveal"><summary>How do I join Bewafa?</summary><p>Click any "Join Discord" button on this page or head to <a href="https://discord.gg/bewafa" target="_blank" rel="noopener">discord.gg/bewafa</a>.</p></details>
-        <details class="reveal"><summary>Is it cracked?</summary><p>Yes — Bewafa SMP supports both premium and cracked players. Everyone is welcome to join our adventures.</p></details>
         <details class="reveal"><summary>What kind of giveaways do you run?</summary><p>We run frequent giveaways including Discord Nitro, Litecoin (LTC) and other prizes during events.</p></details>
         <details class="reveal"><summary>Is the server active?</summary><p>Very. With 10k+ members, chats and voice channels stay active around the clock.</p></details>
         <details class="reveal"><summary>How can I become staff?</summary><p>Stay active, be friendly and helpful, and keep an eye out for staff applications announced in the server.</p></details>
@@ -882,11 +834,11 @@
     document.querySelectorAll('a, button, summary, .card, .person, .status-capsule, .music-toggle, .ip-box').forEach(el => {
       el.addEventListener('mouseenter', () => { 
         trail.style.width = '60px'; trail.style.height = '60px'; trail.style.borderColor = 'var(--glow-core)'; 
-        trail.style.backgroundColor = 'rgba(170, 0, 255, 0.1)';
+        trail.style.backgroundColor = 'rgba(224, 145, 47, 0.1)';
         trail.style.boxShadow = '0 0 30px var(--glow)';
       });
       el.addEventListener('mouseleave', () => { 
-        trail.style.width = '36px'; trail.style.height = '36px'; trail.style.borderColor = 'rgba(208, 77, 255, 0.8)'; 
+        trail.style.width = '36px'; trail.style.height = '36px'; trail.style.borderColor = 'rgba(245, 169, 77, 0.8)'; 
         trail.style.backgroundColor = 'transparent';
         trail.style.boxShadow = '0 0 15px var(--glow)';
       });
@@ -898,7 +850,7 @@
       const p = document.createElement('div');
       p.className = 'p';
       const sz = Math.random() * 5 + 1;
-      const hue = Math.random() > 0.5 ? '170,0,255' : '232,166,255'; 
+      const hue = Math.random() > 0.5 ? '224, 145, 47' : '255, 217, 160'; 
       p.style.cssText = `
         width:${sz}px; height:${sz}px;
         left:${Math.random()*100}%;
@@ -964,14 +916,6 @@
         toggle.classList.remove('playing');
         toggle.setAttribute('aria-pressed', 'false');
       }
-    });
-
-    // 6. Copy IP
-    document.getElementById('copyIpBtn').addEventListener('click', () => {
-        navigator.clipboard.writeText("play.bewafa.fun");
-        const alert = document.getElementById('copyAlert');
-        alert.style.opacity = '1';
-        setTimeout(() => { alert.style.opacity = '0'; }, 3000);
     });
 
     // 7. Scroll Reveal
