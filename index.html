@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Orbitron:wght@400;600;700;900&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
 <meta property="og:title" content="Bewafa — Chilling Indian Discord Server" />
-<meta property="og:description" content="Nonstop active chats, VC, games, events, and giveaways. 10k+ members. Join now!" />
+<meta property="og:description" content="Nonstop active chats, VC, games, events, and giveaways. 12k+ members. Join now!" />
 <meta property="og:image" content="icon.gif" />
 <meta property="og:type" content="website" />
 <link rel="icon" href="icon.gif" type="image/gif" />
@@ -65,7 +65,7 @@
   #cur-trail { width: 36px; height: 36px; border: 1px solid rgba(245, 169, 77, 0.8); box-shadow: 0 0 15px var(--glow); transition: all .12s ease-out; }
 
   @media (pointer: coarse) {
-    body, a, .btn, details, .status-capsule, .music-toggle, .verify-btn { cursor: auto !important; }
+    body, a, .btn, details, .status-capsule, .music-toggle { cursor: auto !important; }
     #cur, #cur-trail { display: none !important; }
   }
 
@@ -78,8 +78,8 @@
 
   .container { width: min(1100px, 90%); margin: 0 auto; position: relative; z-index: 2; }
 
-  /* ── ENHANCED FLOATING BUTTONS (Music & Verify) ── */
-  .music-toggle, .verify-btn {
+  /* ── FLOATING MUSIC TOGGLE ── */
+  .music-toggle {
     position: fixed; z-index: 1000;
     display: inline-flex; align-items: center; gap: 12px;
     padding: 12px 20px; border-radius: 100px;
@@ -91,18 +91,14 @@
   }
   
   .music-toggle { bottom: 30px; right: 30px; }
-  .verify-btn { bottom: 30px; left: 30px; text-decoration: none; }
   
-  .music-toggle:hover, .verify-btn:hover { 
+  .music-toggle:hover { 
     transform: translateY(-3px) scale(1.05); 
     box-shadow: 0 10px 30px var(--glow), 0 0 15px var(--glow-intense); 
     border-color: var(--purple2); 
     color: #fff;
   }
 
-  /* Verify button specific styling */
-  .verify-btn .icon { color: #23d18b; font-size: 1.1rem; font-weight: 900; text-shadow: 0 0 10px rgba(35, 209, 139, 0.5); }
-  .verify-btn:hover .icon { text-shadow: 0 0 15px #23d18b; }
 
   .music-toggle.playing {
     border-color: var(--purple3);
@@ -455,14 +451,9 @@
     .ip-box .port-text { font-size: 0.95rem !important; }
     .ip-box .sep { display: none; }
 
-    /* Move Music & Verify Toggles top so they don't clash with dock */
+    /* Move Music toggle to top so it doesn't clash with dock */
     .music-toggle { 
       top: 15px; bottom: auto; right: 15px; 
-      padding: 10px 14px; font-size: 0.75rem; 
-      background: rgba(22, 14, 7, 0.85);
-    }
-    .verify-btn {
-      top: 15px; bottom: auto; left: 15px;
       padding: 10px 14px; font-size: 0.75rem; 
       background: rgba(22, 14, 7, 0.85);
     }
@@ -493,11 +484,6 @@
     <span class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
     <span id="musicLabel">Music</span>
   </div>
-
-  <a href="https://www.bewafa.fun/verify/" class="verify-btn" target="_blank" rel="noopener" title="Verify User">
-    <span class="icon">✓</span>
-    <span>Verify</span>
-  </a>
 
   <nav>
     <a href="#about" class="nav-link">About</a>
@@ -537,7 +523,7 @@
     <div class="container">
       <div class="stats-grid reveal">
         <div class="stat-card">
-          <span class="num">10K+</span>
+          <span class="num">12K+</span>
           <span class="label">Members</span>
         </div>
         <div class="stat-card">
@@ -765,7 +751,7 @@
       <div class="faq">
         <details class="reveal"><summary>How do I join Bewafa?</summary><p>Click any "Join Discord" button on this page or head to <a href="https://discord.gg/bewafa" target="_blank" rel="noopener">discord.gg/bewafa</a>.</p></details>
         <details class="reveal"><summary>What kind of giveaways do you run?</summary><p>We run frequent giveaways including Discord Nitro, Litecoin (LTC) and other prizes during events.</p></details>
-        <details class="reveal"><summary>Is the server active?</summary><p>Very. With 10k+ members, chats and voice channels stay active around the clock.</p></details>
+        <details class="reveal"><summary>Is the server active?</summary><p>Very. With 12k+ members, chats and voice channels stay active around the clock.</p></details>
         <details class="reveal"><summary>How can I become staff?</summary><p>Stay active, be friendly and helpful, and keep an eye out for staff applications announced in the server.</p></details>
       </div>
     </div>
@@ -777,7 +763,7 @@
     <div class="container">
       <div class="community-inner reveal">
         <h2 class="community-title">Ready to vibe with us?</h2>
-        <p class="community-desc">Join 10,000+ members in the most active Indian Discord hangout.</p>
+        <p class="community-desc">Join 12,000+ members in the most active Indian Discord hangout.</p>
         <a class="btn-primary" href="https://discord.gg/bewafa" target="_blank" rel="noopener" style="font-size:1.05rem; padding: 20px 45px;">
           Join discord.gg/bewafa
         </a>
