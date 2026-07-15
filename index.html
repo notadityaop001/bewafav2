@@ -9,7 +9,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Orbitron:wght@400;600;700;900&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Orbitron:wght@400;600;700;900&family=Syne:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet" />
 
 <meta property="og:title" content="Bewafa — Chilling Indian Discord Server" />
 <meta property="og:description" content="Nonstop active chats, VC, games, events, and giveaways. 12k+ members. Join now!" />
@@ -466,6 +466,159 @@
     .footer-inner { flex-direction: column; text-align: center; gap: 2rem; padding-bottom: 30px;}
     .footer-right { text-align: center; }
   }
+
+
+  /* ══════════════════ PREMIUM REFINEMENT LAYER ══════════════════ */
+  :root{
+    --gold-hi:#ffe9c2; --gold:#f3c67a; --gold-core:#e8b978; --gold-deep:#c98f3a;
+    --ink:#1c1206;
+    --line:rgba(224,170,90,0.16);
+    --line-strong:rgba(232,185,110,0.34);
+    --shadow-soft:0 24px 60px -22px rgba(0,0,0,.78);
+  }
+  body{
+    background:
+      radial-gradient(1200px 700px at 50% -8%, rgba(224,145,47,.10), transparent 60%),
+      radial-gradient(900px 620px at 88% 12%, rgba(180,110,40,.06), transparent 60%),
+      var(--bg);
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    font-feature-settings:"liga","kern";
+  }
+  ::selection{ background:rgba(232,185,110,.28); color:#fff; }
+  ::-webkit-scrollbar{ width:10px; }
+  ::-webkit-scrollbar-track{ background:var(--bg2); }
+  ::-webkit-scrollbar-thumb{ background:linear-gradient(var(--gold-deep),#7c541f); border-radius:10px; border:2px solid var(--bg2); }
+  ::-webkit-scrollbar-thumb:hover{ background:var(--gold); }
+
+  /* Editorial serif + metallic gold gradient headings */
+  .section-head h2, .community-title{
+    font-family:'Cormorant Garamond', Georgia, serif;
+    font-weight:700; text-transform:none; letter-spacing:.01em; line-height:1.05;
+    font-size:clamp(2.6rem, 6vw, 4.4rem); margin-bottom:1rem;
+    background:linear-gradient(180deg,var(--gold-hi) 0%, var(--gold) 46%, var(--gold-deep) 100%);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent;
+    text-shadow:none;
+  }
+  .section-head{ margin-bottom:4rem; }
+  .section-head p{ color:var(--silver2); font-weight:400; font-size:1.05rem; }
+  .section-tag{
+    color:var(--gold-core); border:1px solid var(--line-strong); background:rgba(232,185,110,.06);
+    box-shadow:none; letter-spacing:.42em; border-radius:100px; padding:.5rem 1.3rem; font-weight:600;
+    backdrop-filter:blur(6px);
+  }
+
+  /* Hero */
+  .server-name{
+    text-shadow:0 3px 44px rgba(224,145,47,.32);
+    background:linear-gradient(180deg,#ffffff 0%, #ffeccb 55%, #f3c67a 100%);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent;
+    animation:fadeUp .8s .35s both ease;
+  }
+  .hero .tagline{ color:var(--gold-core); font-weight:500; letter-spacing:.5em; font-size:.92rem; text-shadow:none; }
+  .status-capsule{ background:rgba(255,255,255,.03); border:1px solid var(--line-strong); box-shadow:none; }
+  .status-capsule:hover{ background:rgba(232,185,110,.08); box-shadow:0 12px 30px -14px rgba(0,0,0,.6); transform:translateY(-2px); }
+  .status-text{ color:var(--gold-core); font-weight:600; }
+  .avatar{ border:1px solid var(--line-strong); background:rgba(255,255,255,.02); }
+  @keyframes pulseAvatar{
+    0%{ box-shadow:0 0 34px -8px rgba(224,145,47,.5); border-color:var(--line-strong); }
+    100%{ box-shadow:0 0 54px -8px rgba(245,169,77,.6); border-color:var(--gold-core); }
+  }
+  .hero-line{ background:linear-gradient(to bottom, transparent, var(--gold-core), transparent); box-shadow:none; }
+
+  /* Luxe buttons */
+  .btn-primary, .btn-secondary{ border-radius:100px; letter-spacing:.18em; }
+  .btn-primary{
+    color:var(--ink);
+    background:linear-gradient(180deg,#ffd98f 0%, #eeb762 48%, #cf8f34 100%);
+    border:1px solid rgba(255,222,164,.75);
+    box-shadow:0 12px 30px -10px rgba(207,143,52,.55), inset 0 1px 0 rgba(255,255,255,.65);
+    text-shadow:none;
+  }
+  .btn-primary::after{ background:linear-gradient(180deg, rgba(255,255,255,.35), transparent 60%); }
+  .btn-primary:hover{ transform:translateY(-3px); border-color:#fff;
+    box-shadow:0 20px 44px -12px rgba(207,143,52,.7), inset 0 1px 0 rgba(255,255,255,.8); }
+  .btn-secondary{ background:rgba(255,255,255,.02); border:1px solid var(--line-strong); color:var(--silver); }
+  .btn-secondary:hover{ border-color:var(--gold-core); color:#fff; background:rgba(232,185,110,.06);
+    box-shadow:0 14px 32px -14px rgba(0,0,0,.6); }
+
+  /* Refined glass surfaces */
+  .card, details, .stat-card{
+    border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow-soft);
+    background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.008)), rgba(22,14,7,.55);
+    backdrop-filter:blur(14px) saturate(1.1);
+  }
+  .card:hover, details:hover, .stat-card:hover{
+    transform:translateY(-6px); border-color:var(--line-strong);
+    box-shadow:0 32px 72px -26px rgba(0,0,0,.85), 0 0 0 1px rgba(232,185,110,.12);
+    background:linear-gradient(180deg, rgba(232,185,110,.06), rgba(255,255,255,.008)), rgba(22,14,7,.6);
+  }
+  .card::before, .person::before{ height:1px; box-shadow:none;
+    background:linear-gradient(90deg, transparent, var(--gold), transparent); }
+
+  /* Stats */
+  .stat-card{ padding:2.6rem 2rem; }
+  .stat-card .num{
+    font-family:'Cormorant Garamond', Georgia, serif; font-weight:700; font-size:3.8rem; margin-bottom:.3rem;
+    background:linear-gradient(180deg,var(--gold-hi), var(--gold) 55%, var(--gold-deep));
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent;
+    text-shadow:none;
+  }
+  .stat-card:hover .num{ transform:none; }
+  .stat-card .label{ color:var(--silver3); letter-spacing:.26em; font-weight:600; font-size:.72rem; }
+  .stat-card:hover{ box-shadow:0 32px 72px -26px rgba(0,0,0,.85); }
+  .stat-card::before{ background:radial-gradient(circle at 70% 0%, rgba(232,185,110,.12), transparent 60%); }
+
+  /* Feature cards */
+  .card{ padding:2.8rem 2.4rem; }
+  .card .ico{ background:rgba(232,185,110,.08); border:1px solid var(--line-strong); box-shadow:none; border-radius:14px; }
+  .card:hover .ico{ transform:translateY(-4px) scale(1.06) rotate(0deg); border-color:var(--gold-core);
+    background:rgba(232,185,110,.14); box-shadow:0 12px 26px -12px rgba(207,143,52,.5); }
+  .card h3{ font-family:'Cormorant Garamond', Georgia, serif; font-size:2rem; font-weight:700; letter-spacing:0; }
+  .card:hover h3{ color:var(--gold-hi); text-shadow:none; }
+  ul.feature-list li{ color:var(--silver2); }
+  ul.feature-list li::before{ content:"—"; color:var(--gold-core); text-shadow:none; font-weight:600; }
+  .card:hover ul.feature-list li::before{ color:var(--gold-hi); text-shadow:none; transform:none; }
+
+  /* People */
+  .person{ border:1px solid var(--line); box-shadow:var(--shadow-soft); border-radius:20px; }
+  .person:hover{ transform:translateY(-8px); border-color:var(--line-strong);
+    box-shadow:0 32px 72px -26px rgba(0,0,0,.9); }
+  .person h3{ font-family:'Cormorant Garamond', Georgia, serif; font-weight:700; }
+  .person:hover h3{ color:var(--gold-hi); text-shadow:0 2px 12px rgba(0,0,0,.85); }
+  .person .role{ color:var(--gold-core); }
+
+  /* FAQ */
+  details summary{ font-weight:600; letter-spacing:0; font-size:1.12rem; }
+  details:hover{ box-shadow:var(--shadow-soft); }
+  details:hover summary{ color:var(--gold-hi); text-shadow:none; }
+  details summary::after{ color:var(--gold-core); text-shadow:none; }
+  details[open] summary::after{ color:var(--gold-hi); text-shadow:none; }
+
+  /* Nav */
+  nav{ background:linear-gradient(180deg, rgba(10,7,4,.86), transparent); border-bottom:1px solid var(--line); }
+  nav a{ font-weight:600; letter-spacing:.22em; font-size:.8rem; color:var(--silver3); }
+  nav a:hover{ color:var(--gold-hi); text-shadow:none; transform:translateY(-1px); }
+  nav a::after{ background:var(--gold); box-shadow:none; height:1px; }
+
+  /* Community CTA */
+  .community-inner{
+    background:linear-gradient(180deg, rgba(232,185,110,.08), rgba(255,255,255,.01)), rgba(22,14,7,.5);
+    border:1px solid var(--line-strong); box-shadow:var(--shadow-soft); border-radius:26px;
+  }
+  .community-inner::before{ background:radial-gradient(circle, rgba(232,185,110,.2), transparent 70%); }
+  .community-desc{ color:var(--silver2); }
+
+  /* Misc */
+  .divider{ background:linear-gradient(90deg, transparent, var(--line-strong), transparent); box-shadow:none; }
+  a{ color:var(--gold-core); }
+  a:hover{ color:var(--gold-hi); text-shadow:none; }
+  #cur{ background:var(--gold-hi); box-shadow:0 0 12px var(--gold), 0 0 24px rgba(224,145,47,.5); }
+  #cur-trail{ border:1px solid rgba(232,185,110,.7); box-shadow:0 0 12px rgba(224,145,47,.4); }
+  footer{ border-top:1px solid var(--line); background:rgba(9,6,3,.96); }
+  .footer-brand{ text-shadow:none; }
+  .footer-brand img{ border:1px solid var(--line-strong); box-shadow:none; }
+  .socials a{ background:rgba(232,185,110,.05); border:1px solid var(--line-strong); }
+  .socials a:hover{ border-color:var(--gold-core); box-shadow:0 12px 26px -12px rgba(0,0,0,.6); color:#fff; }
 
 </style>
 </head>
